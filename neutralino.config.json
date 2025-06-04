@@ -1,0 +1,62 @@
+{
+  "applicationId": "js.neutralino.zero",
+  "version": "1.0.0",
+  "defaultMode": "window",
+  "documentRoot": "/dist/",
+  "port":0,
+  "url": "/",
+  "enableServer": true,
+  "enableNativeAPI": true,
+  "tokenSecurity": "one-time",
+  "exportAuthInfo": false,
+   "distributionPath": "/release",
+  "logging": {
+    "enabled": true,
+    "writeToLogFile": true
+  },
+
+  "nativeAllowList": [
+    "app.*",
+    "os.*",
+    "debug.log",
+    "filesystem.*",
+    "computer.*"
+  ],
+  "modes": {
+    "window": {
+      "title": "starter",
+      "icon": "/assets/icon.png",
+       "width": 800,
+      "height": 800,
+      "minWidth": 400,
+      "minHeight": 200,
+      "center": true,
+      "fullScreen": false,
+      "alwaysOnTop": false,
+      "enableInspector": false,
+      "borderless": false,
+      "maximize": false,
+      "hidden": false,
+      "resizable": true,
+      "exitProcessOnClose": true,
+      "injectGlobals": true
+      
+    }
+  },
+  "cli": {
+    "binaryName": "starter",
+    "resourcesPath": "/dist/",
+    "extensionsPath": "/extensions/",
+    "binaryVersion": "6.1.0",
+    "clientVersion": "6.1.0",
+      "frontendLibrary": {
+        "patchFile": "/index.html",
+        "devUrl": "http://localhost:5173",
+        "projectPath": "/",
+        "initCommand": "bun install",
+        "devCommand": "bun run dev:vite",
+        "buildCommand": "bun run build",
+        "waitTimeout": 20000
+    }
+  }
+}
