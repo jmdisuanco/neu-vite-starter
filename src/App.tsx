@@ -1,16 +1,13 @@
-import {  useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 
-import { filesystem ,os } from "@neutralinojs/lib";
- 
+import { filesystem, } from "@neutralinojs/lib";
+
 function App() {
-  const [message, setMessage] = useState('')
+  const [message, setMessage] = useState('Click Me')
 
-useEffect(() => {
-            os.showMessageBox('Welcome', 'Hello from Neutralinojs (via @neutralinojs/lib)!');    
-  }, []); // Runs once on component mount
 
- useEffect(() => {
+  useEffect(() => {
     filesystem.readDirectory('./').then((data) => {
       console.log(data)
     }).catch((err) => {
@@ -18,16 +15,21 @@ useEffect(() => {
     })
   }, [])
 
-   const handleClick = async () => {
-    setMessage('click')
+  const handleClick = async () => {
+    setMessage('Clicked!')
 
-  };  
+  };
 
   return (
     <div className="flex min-h-svh flex-col items-center justify-center">
-        {message}
+      <img src="logo.png" alt="Sample Application Logo" className="rounded-[90px] shadow-2xl" />
+      <div className="m-2 text-4xl">
         {window.NL_APPID}
-      <Button onClick={handleClick}>Click me</Button>
+      </div>
+
+      <Button onClick={handleClick}> {message}</Button>
+
+      <pre className="m-4 text-teal-500">check out the Console log to see list of files on the system</pre>
     </div>
   );
 }
