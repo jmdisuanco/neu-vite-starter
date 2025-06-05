@@ -6,20 +6,33 @@
 - Shadcn UI
 - Built-in Bun server (WIP)
 
-# Usage
+
+## Requirements
+- **Development Stage**
+  - [Bun](https://bun.sh/)
+  - [Neutralino cli](https://neutralino.js.org/docs/cli/neu-cli/)
+- **Build Stage**
+  - [jq](https://jqlang.org/)
+
+## Usage
  Staring a new Neutralino project  using this template
  - `bunx degit jmdisuanco/neu-vite-starter TARGET_DIRECTORY`
  - `cd TARGET_DIRECTORY`
  - `neu update`
  - `bun run dev`
 
+## Icons
+ only `icon.png`  is required. `.ico` and `.icns` is automatically generated from it.
 
-# Development
- -- `gh repo clone jmdisuanco/neu-vite-starter` 
- -- initial neutralino `neu update`
- -- before running `bun run dev`
- -- to start development `neu run dev` of the project root
- 
+## Build
+ Building your app
+ - osx `brew install jq` or Linux and Windows(WSL) `sudo apt-get install jq`
+ - use neutralino build `neu build`
+ - packaging 
+  - Mac : `bun run build:mac`
+  - Windows : `bun run build:win`
+  - Linux : `bun run build:linux`
+ build tools is based on [hschneide's neutralino-build-scripts](./tools/build/README.md) 
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 

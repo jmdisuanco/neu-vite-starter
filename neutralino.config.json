@@ -24,7 +24,7 @@
   ],
   "modes": {
     "window": {
-      "title": "starter",
+      "title": "NeuViteStarter",
       "icon": "/assets/icon.png",
        "width": 800,
       "height": 800,
@@ -41,6 +41,28 @@
       "exitProcessOnClose": true,
       "injectGlobals": true
       
+    }
+  },
+  "buildScript": {
+    "mac": {
+      "architecture": ["x64", "arm64", "universal"],
+      "minimumOS": "10.13.0",
+      "appName": "NeuViteStarter",
+      "appBundleName": "NeuViteStarter",
+      "appIdentifier": "com.jmdisuanco.ext.nextvite.starter",
+      "appIcon":  "./assets/icon.icns"
+    },
+    "win": {
+      "architecture": ["x64"],
+      "appName": "NeuViteStarter",
+      "appIcon": "./assets/icon.ico"
+    },
+    "linux": {
+      "architecture": ["x64", "arm64", "armhf"],
+      "appName": "NeuViteStarter",
+      "appIcon": "./assets/icon.png",
+      "appPath":  "/usr/share/NeuViteStarter",
+      "appIconPath": "/usr/share/NeuViteStarter/icon.png"
     }
   },
   "cli": {

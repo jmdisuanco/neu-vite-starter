@@ -5,7 +5,11 @@
   "type": "module",
   "scripts": {
     "dev:vite": "vite",
+    "createIcons":"bunx png2icons ./assets/icon.png ./assets/icon -allp -bc -i",
     "build": "tsc -b && vite build",
+    "build:mac":"bun run createIcons && ./tools/build/build-mac.sh",
+    "build:win":"bun run createIcons && ./tools/build/build-win.sh",
+    "build:linux":"bun run createIcons &&  ./tools/build/build-linux.sh",
     "lint": "eslint .",
     "preview": "vite preview",
     "dev": "neu run  -- --dev --window-enable-inspector"
