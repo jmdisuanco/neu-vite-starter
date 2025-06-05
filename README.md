@@ -6,9 +6,18 @@
 - Shadcn UI
 - Built-in Bun server (WIP)
 
+# Usage
+ Staring a new Neutralino project  using this template
+ - `bunx degit jmdisuanco/neu-vite-starter TARGET_DIRECTORY`
+ - `cd TARGET_DIRECTORY`
+ - `neu update`
+ - `bun run dev`
+
+
 # Development
+ -- `gh repo clone jmdisuanco/neu-vite-starter` 
  -- initial neutralino `neu update`
- -- before running `bun run dev`  do an initial `bun run build` in the app directory
+ -- before running `bun run dev`
  -- to start development `neu run dev` of the project root
  
 
