@@ -28,6 +28,8 @@ function App() {
       </div>
 
       <Button onClick={handleClick}> {message}</Button>
+
+      <pre className="m-4 text-teal-500">check out the Console log to see list of files on the system</pre>
     </div>
   );
 }
