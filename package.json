@@ -9,14 +9,15 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "dev": "neu run  -- --dev --window-enable-inspector",
-    "tag:patch": "node scripts/tag.js patch",
-    "tag:minor": "node scripts/tag.js minor",
-    "tag:major": "node scripts/tag.js major"
+    "tag:patch": "bun scripts/tag.js patch",
+    "tag:minor": "bun scripts/tag.js minor",
+    "tag:major": "bun scripts/tag.js major"
   },
   "dependencies": {
     "@neutralinojs/lib": "^6.1.0",
     "@radix-ui/react-slot": "^1.2.3",
     "@tailwindcss/vite": "^4.1.8",
+    "@types/bun": "^1.2.15",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.511.0",
@@ -31,6 +32,7 @@
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "@vitejs/plugin-react": "^4.4.1",
+    "bun-types": "^1.2.15",
     "eslint": "^9.25.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",

@@ -6,6 +6,7 @@
   ], 
   "compilerOptions": {
     "baseUrl": ".",
+    "types": ["bun-types"],
     "paths": {
       "@/*": ["./src/*"] // Or your preferred alias and path
     }}
