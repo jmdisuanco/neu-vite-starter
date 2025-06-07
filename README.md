@@ -29,10 +29,7 @@
  - osx `brew install jq` or Linux and Windows(WSL) `sudo apt-get install jq`
  - use neutralino build `neu build`
  - packaging 
-  - Mac : `bun run build:mac`
-  - Windows : `bun run build:win`
-  - Linux : `bun run build:linux`
- build tools is based on [hschneide's neutralino-build-scripts](./tools/build/README.md) 
+   CLI Tool Coming soon
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
