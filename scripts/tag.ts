@@ -48,7 +48,8 @@ const newVersion = `${major}.${minor}.${patch}`;
 pkg.version = newVersion;
 writeFileSync("package.json", JSON.stringify(pkg, null, 2) + "\n");
 
-const tagName = `${branch}-${newVersion}`;
+const tagName = `${branch}@${newVersion}`;
+const tagLatest = `${branch}@latest`;
 console.log(`🏷️  Creating tag: ${tagName}`);
 
 // Git operations
@@ -57,5 +58,7 @@ exec(["git", "commit", "-m", `chore: bump version to ${newVersion}`]);
 exec(["git", "push"]);
 exec(["git", "tag", tagName]);
 exec(["git", "push", "origin", tagName]);
-
-console.log(`✅ Tagged and pushed as ${tagName}`);
+//push latest
+exec(["git", "tag", "-f", tagLatest]);
+exec(["git", "push", "origin", "-f", tagLatest]);
+console.log(`✅ Tagged and pushed as ${tagName} and ${tagLatest}`);
