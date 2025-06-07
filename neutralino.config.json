@@ -1,5 +1,5 @@
 {
-  "applicationId": "com.jmdisuanco.neutralino.starter",
+  "applicationId": "com.jmdisuanco.neukit-bun.starter",
   "version": "1.0.0",
   "defaultMode": "window",
   "documentRoot": "/dist/",
@@ -27,7 +27,7 @@
   ],
   "modes": {
     "window": {
-      "title": "NeuViteStarter",
+      "title": "NeuKitStarter",
       "icon": "/assets/icon.png",
       "width": 800,
       "height": 800,
@@ -52,14 +52,14 @@
         "arm64"
       ],
       "minimumOS": "10.13.0",
-      "appName": "NeuViteStarter",
-      "appBundleName": "NeuViteStarter"
+      "appName": "NeuKitStarter",
+      "appBundleName": "NeuKitStarter"
     },
     "win": {
       "architecture": [
         "x64"
       ],
-      "appName": "NeuViteStarter",
+      "appName": "NeuKitStarter",
       "appIcon": "./assets/icon.ico"
     },
     "linux": {
@@ -68,10 +68,10 @@
         "arm64",
         "armhf"
       ],
-      "appName": "NeuViteStarter",
+      "appName": "NeuKitStarter",
       "appIcon": "./assets/icon.png",
-      "appPath": "/usr/share/NeuViteStarter",
-      "appIconPath": "/usr/share/NeuViteStarter/icon.png"
+      "appPath": "/usr/share/NeuKitStarter",
+      "appIconPath": "/usr/share/NeuKitStarter/icon.png"
     }
   },
   "cli": {
@@ -93,9 +93,7 @@
   "extensions": [
     {
       "id": "js.neutralino.bun-server",
-      "commandDarwin": "${NL_PATH}/extensions/bun-server/start-mac",
-      "commandLinux": "${NL_PATH}/extensions/bun-server/start-linux",
-      "commandWindows": "${NL_PATH}\\extensions\\bun-server\\start-windows.exe"
+      "command": "${NL_PATH}/extensions/bun-server/start"
     }
   ]
 }
