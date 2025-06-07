@@ -4,7 +4,7 @@
 - Typescript
 - Tailwind CSS 4
 - Shadcn UI
-- Built-in Bun server (WIP)
+- Built-in Bun server
 
 
 ## Requirements
@@ -14,9 +14,17 @@
 - **Build Stage**
   - [jq](https://jqlang.org/)
 
-## Usage
+## Usage no extension
  Staring a new Neutralino project  using this template
  - `bunx degit jmdisuanco/neu-vite-starter TARGET_DIRECTORY`
+ - `cd TARGET_DIRECTORY`
+ - `neu update`
+ - `bun run dev`
+
+
+## Usage with Bun server extension
+ Staring a new Neutralino project  using this template
+ - `bunx degit jmdisuanco/neu-vite-starter#bun TARGET_DIRECTORY`
  - `cd TARGET_DIRECTORY`
  - `neu update`
  - `bun run dev`

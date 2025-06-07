@@ -1,0 +1,18 @@
+{
+  "name": "bun-server",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "^0.6.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "build": "bun build ./index.ts --compile  --target=bun-darwin-arm64 --bytecode  --minify --outfile ../../extensions/bun-server/start-mac",
+    "build:mac": "bun build ./index.ts --compile --target=bun-darwin-arm64 --bytecode  --minify --outfile ../../extensions/bun-server/start-mac_arm64 && bun build ./index.ts --compile --targe=bun-darwn-x64 --bytecode  --minify --outfile ../../extensions/bun-server/start-mac_x64",
+    "build:linux": "bun build ./index.ts --compile --target=bun-linux-arm64 --bytecode  --minify --outfile ../../extensions/bun-server/start-linux_arm64 && bun build ./index.ts --compile --targe=bun-linux-x64 --bytecode  --minify --outfile ../../extensions/bun-server/start-linux_x64 &&  bun build ./index.ts --compile --targe=bun-linux-armhf --bytecode  --minify --outfile ../../extensions/bun-server/start-linux_armhf",
+    "build:windows": " bun build ./index.ts --compile --target=bun-windows-x64 --bytecode  --minify --outfile ../../extensions/bun-server/start-windows_x64.exe",
+    "build:all": "bun run build:mac && bun run build:linux && bun run build:windows"
+  }
+}

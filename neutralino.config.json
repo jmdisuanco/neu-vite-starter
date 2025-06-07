@@ -1,22 +1,25 @@
 {
-  "applicationId": "js.neutralino.zero",
+  "applicationId": "com.jmdisuanco.neutralino.starter",
   "version": "1.0.0",
   "defaultMode": "window",
   "documentRoot": "/dist/",
-  "port":0,
+  "port": 0,
   "url": "/",
   "enableServer": true,
   "enableNativeAPI": true,
   "tokenSecurity": "one-time",
   "exportAuthInfo": false,
-   "distributionPath": "/release",
+  "distributionPath": "/release",
+  "enableExtensions": true,
   "logging": {
     "enabled": true,
     "writeToLogFile": true
   },
-
   "nativeAllowList": [
     "app.*",
+    "custom.*",
+    "events.*",
+    "extensions.*",
     "os.*",
     "debug.log",
     "filesystem.*",
@@ -26,7 +29,7 @@
     "window": {
       "title": "NeuViteStarter",
       "icon": "/assets/icon.png",
-       "width": 800,
+      "width": 800,
       "height": 800,
       "minWidth": 400,
       "minHeight": 200,
@@ -40,45 +43,59 @@
       "resizable": true,
       "exitProcessOnClose": true,
       "injectGlobals": true
-      
     }
   },
   "buildScript": {
     "mac": {
-      "architecture": ["x64", "arm64", "universal"],
+      "architecture": [
+        "x64",
+        "arm64"
+      ],
       "minimumOS": "10.13.0",
       "appName": "NeuViteStarter",
-      "appBundleName": "NeuViteStarter",
-      "appIdentifier": "com.jmdisuanco.ext.nextvite.starter",
-      "appIcon":  "./assets/icon.icns"
+      "appBundleName": "NeuViteStarter"
     },
     "win": {
-      "architecture": ["x64"],
+      "architecture": [
+        "x64"
+      ],
       "appName": "NeuViteStarter",
       "appIcon": "./assets/icon.ico"
     },
     "linux": {
-      "architecture": ["x64", "arm64", "armhf"],
+      "architecture": [
+        "x64",
+        "arm64",
+        "armhf"
+      ],
       "appName": "NeuViteStarter",
       "appIcon": "./assets/icon.png",
-      "appPath":  "/usr/share/NeuViteStarter",
+      "appPath": "/usr/share/NeuViteStarter",
       "appIconPath": "/usr/share/NeuViteStarter/icon.png"
     }
   },
   "cli": {
-    "binaryName": "starter",
+    "binaryName": "neu-starter",
     "resourcesPath": "/dist/",
     "extensionsPath": "/extensions/",
     "binaryVersion": "6.1.0",
     "clientVersion": "6.1.0",
-      "frontendLibrary": {
-        "patchFile": "/index.html",
-        "devUrl": "http://localhost:5173",
-        "projectPath": "/",
-        "initCommand": "bun install",
-        "devCommand": "bun run dev:vite",
-        "buildCommand": "bun run build",
-        "waitTimeout": 20000
+    "frontendLibrary": {
+      "patchFile": "/index.html",
+      "devUrl": "http://localhost:5173",
+      "projectPath": "/",
+      "initCommand": "bun install",
+      "devCommand": "bun run dev:vite",
+      "buildCommand": "bun run build",
+      "waitTimeout": 20000
     }
-  }
+  },
+  "extensions": [
+    {
+      "id": "js.neutralino.bun-server",
+      "commandDarwin": "${NL_PATH}/extensions/bun-server/start-mac",
+      "commandLinux": "${NL_PATH}/extensions/bun-server/start-linux",
+      "commandWindows": "${NL_PATH}\\extensions\\bun-server\\start-windows.exe"
+    }
+  ]
 }
