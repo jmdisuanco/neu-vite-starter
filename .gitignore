@@ -38,3 +38,5 @@ neutralino.js
 .storage
 .tmp
 auth_info.json
+build
+extensions

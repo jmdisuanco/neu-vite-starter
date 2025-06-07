@@ -8,7 +8,10 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "dev": "neu run  -- --dev --window-enable-inspector"
+    "dev": "neu run  -- --dev --window-enable-inspector",
+    "tag:patch": "node scripts/tag.js patch",
+    "tag:minor": "node scripts/tag.js minor",
+    "tag:major": "node scripts/tag.js major"
   },
   "dependencies": {
     "@neutralinojs/lib": "^6.1.0",
