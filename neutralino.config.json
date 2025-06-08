@@ -92,8 +92,10 @@
   },
   "extensions": [
     {
-      "id": "js.neutralino.bun-server",
-      "command": "${NL_PATH}/extensions/bun-server/start"
+      "id": "neukit.bun-server",
+      "commandLinux": "${NL_PATH}/extensions/bun-server/start",
+      "commandDarwin": "${NL_PATH}/extensions/bun-server/start",
+      "commandWindows": "${NL_PATH}/extensions/bun-server/start.exe"
     }
   ]
 }
