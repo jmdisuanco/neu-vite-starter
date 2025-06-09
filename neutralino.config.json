@@ -1,5 +1,5 @@
 {
-  "applicationId": "com.jmdisuanco.neukit-bun.starter",
+  "applicationId": "dev.neukit.bun.starter",
   "version": "1.0.0",
   "defaultMode": "window",
   "documentRoot": "/dist/",
@@ -83,7 +83,7 @@
     "frontendLibrary": {
       "patchFile": "/index.html",
       "devUrl": "http://localhost:5173",
-      "projectPath": "/",
+      "projectPath": "/src",
       "initCommand": "bun install",
       "devCommand": "bun run dev:vite",
       "buildCommand": "bun run build",
@@ -92,7 +92,7 @@
   },
   "extensions": [
     {
-      "id": "neukit.bun-server",
+      "id": "dev.neukit.bun-server.ext",
       "commandLinux": "${NL_PATH}/extensions/bun-server/start",
       "commandDarwin": "${NL_PATH}/extensions/bun-server/start",
       "commandWindows": "${NL_PATH}/extensions/bun-server/start.exe"

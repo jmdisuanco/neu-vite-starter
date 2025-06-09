@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { extensions, events } from "@neutralinojs/lib";
 
-const BUN_EXTENSION_ID = 'js.neutralino.bun-server';
+const BUN_EXTENSION_ID = 'dev.neukit.bun-server.ext';
 
 interface AppMessage {
   id: string;
@@ -11,7 +11,7 @@ interface AppMessage {
 }
 
 function App() {
-  const [extensionStatus, setExtensionStatus] = useState('Status: Initializing...');
+  const [extensionStatus, setExtensionStatus] = useState('Status: Waiting for message...');
   const [messages, setMessages] = useState<AppMessage[]>([]);
   const [echoInput, setEchoInput] = useState('');
 
@@ -46,46 +46,19 @@ function App() {
     }
   };
 
-  // Setup extension event listeners once
+
+  //extension listener
   useEffect(() => {
-    const onNeutralinoReady = () => {
-      setExtensionStatus("Status: Neutralino Ready. Waiting for extension events.");
 
-      const offExtensionReady = events.on(`${BUN_EXTENSION_ID}.extensionReady`, (evt: CustomEvent<any>) => {
-        console.log("extensionReady:", evt.detail);
-        setExtensionStatus("Status: Bun Extension Connected & Ready!");
-        logToUI(`Event from Bun: extensionReady - ${evt.detail?.message || 'No message.'}`, "success");
-      });
+    const broadcast = events.on("fromNeukitBunExtension", (data: any) => {
+      const { detail } = data
+      console.log(detail)
+      setExtensionStatus(detail.message);
+    });
 
-      const offPongResponse = events.on(`${BUN_EXTENSION_ID}.pongResponse`, (evt: CustomEvent<any>) => {
-        console.log("pongResponse:", evt.detail);
-        logToUI(`Event from Bun: pongResponse - Original: ${JSON.stringify(evt.detail?.originalData)}, Response: ${evt.detail?.responseText}`, "extension-event");
-      });
-
-      const offEchoResponse = events.on(`${BUN_EXTENSION_ID}.echoResponse`, (evt: CustomEvent<any>) => {
-        console.log("echoResponse:", evt.detail);
-        logToUI(`Event from Bun: echoResponse - Original: "${evt.detail?.originalData}", Echoed by: ${evt.detail?.echoedBy}`, "extension-event");
-      });
-
-      const statusCheckTimeout = setTimeout(() => {
-        extensions.dispatch(BUN_EXTENSION_ID, 'statusCheck', { appTimestamp: new Date().toISOString() })
-          .catch(err => {
-            if (!extensionStatus.includes("Ready!")) {
-              setExtensionStatus("Status: Bun Extension might not be connected. Check extension logs.");
-              console.warn("statusCheck failed:", err);
-            }
-          });
-      }, 2000);
-      const offReady = events.on('ready', onNeutralinoReady);
-      return () => {
-        offExtensionReady;
-        offPongResponse;
-        offEchoResponse;
-        offReady;
-        clearTimeout(statusCheckTimeout);
-      };
+    return () => {
+      broadcast
     };
-
   }, []);
 
   const getMessageStyle = (type: AppMessage['type']) => {
@@ -109,7 +82,7 @@ function App() {
       </div>
 
       <div className="w-full max-w-2xl p-4 border border-gray-300 rounded-lg shadow-md bg-white">
-        <h2 className="text-xl font-bold mb-3 text-center">Neutralino & Bun Client Extension Demo</h2>
+        <h2 className="text-xl font-bold mb-3 text-center">NeuKit-Bun Demo</h2>
 
         <div
           id="extensionStatus"

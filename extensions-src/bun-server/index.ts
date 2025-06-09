@@ -31,9 +31,9 @@ async function main() {
                     method: "app.broadcast",
                     accessToken: params.nlToken,
                     data: {
-                        event: "fromExtension",
+                        event: "fromNeukitBunExtension",
                         data: {
-                            message: "📡 Hello from Bun!",
+                            message: `Hello from Neukit server!`,
                         },
                     },
                 };
