@@ -16,6 +16,7 @@
     "neukit:prepackage:mac": "bun run neukit:build-bun-server:mac",
     "neukit:prepackage:linux": "bun run neukit:build-bun-server:linux",
     "neukit:prepackage:win": "bun run neukit:build-bun-server:win",
+    "neu:update": "neu update",
     "tag:patch": "bun scripts/tag.js patch",
     "tag:minor": "bun scripts/tag.js minor",
     "tag:major": "bun scripts/tag.js major",
