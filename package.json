@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "dev": "neu run  -- --dev --window-enable-inspector",
+    "neu:update":"neu update",
     "tag:patch": "bun scripts/tag.js patch",
     "tag:minor": "bun scripts/tag.js minor",
     "tag:major": "bun scripts/tag.js major"
